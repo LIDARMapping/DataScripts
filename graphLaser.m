@@ -10,18 +10,9 @@ ret = data(:,2);
 figure
 
 % Ret & Zero
-subplot(2, 1, 1);
-plot(t, ret, t, zero);
+plot(t, ret, t, zero, t, sync);
 axis([0 3000 0 5]);
-xlabel('time');
-ylabel('voltage');
-title('signal');
-legend('ret', 'zero');
-
-% Sync
-subplot(2, 1, 2);
-plot(t, sync);
-axis([0 3000 0 2]);
-xlabel('time');
-ylabel('digital');
-title('sync');
+xlabel('time (ms)');
+ylabel('voltage and high/low');
+title('LiDAR sync, return, and zero pins vs. time');
+legend('ret', 'zero', 'sync');
