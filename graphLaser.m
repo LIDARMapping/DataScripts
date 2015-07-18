@@ -17,3 +17,5 @@ xlabel('time (ms)');
 ylabel('voltage and high/low');
 title('LiDAR sync, return, and zero pins vs. time');
 legend('ret', 'zero', 'sync');
+
+pause(5);
