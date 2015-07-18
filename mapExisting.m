@@ -4,8 +4,12 @@ distances = [];
 
 tit = 'map';
 
-while 1
-	dataStr = input('.', 's');
+while feof(stdin) == 0
+	try
+		dataStr = input('.', 's');
+	catch exception
+		break;
+	end
 	if(strcmp(dataStr, 'Start!')) % Initialize
 		angles = [];
 		distances = [];
@@ -22,13 +26,12 @@ while 1
 	if(rows(data) != 2)
 		continue;
 	end
-	angles = [angles pi/180.0*(data(1))];
+	angles = [angles (data(1))];
 	distances = [distances data(2)];
 	polar(angles, distances);
 	title(tit);
 	xlabel('x distance (millimeters)');
 	ylabel('y distance (millimeters)');
-	pause(0.1);
+	pause(0.01);
 end
-pause(10000);
-dlmwrite([tit '.txt'], [angles; distances]', ' ');
+print -dpdf map.pdf
