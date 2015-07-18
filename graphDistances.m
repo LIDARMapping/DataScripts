@@ -11,7 +11,9 @@ figure
 scatter(realDist, response);
 hold on;
 
-mypoly = polyfit(realDist, response, 2);
+[mypoly S] = polyfit(realDist, response, 2);
+
+S(1)
 
 xTrend = 1.0:0.01:10;
 yTrend = polyval(mypoly, xTrend);
