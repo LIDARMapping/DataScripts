@@ -30,5 +30,4 @@ while 1
 	ylabel('y distance (millimeters)');
 	pause(0.1);
 end
-pause(10000);
 dlmwrite([tit '.txt'], [angles; distances]', ' ');
